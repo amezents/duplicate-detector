@@ -4,7 +4,7 @@ get list of folders to find duplicates and outputs list of detected
 Execute in shell command "make" - this produces tests and target programm executables and runs the tests.
 >make
 output should be something like this:
-
+```
 builds target programm
 cd example; \
 make run
@@ -56,5 +56,6 @@ Running main() from gmock_main.cc
 [----------] Global test environment tear-down
 [==========] 10 tests from 5 test cases ran. (149 ms total)
 [  PASSED  ] 10 tests.
-amezents@amezents-host:~/study/kata/cpp/temp_test/duplicate-detector$ 
+amezents@amezents-host:~/study/kata/cpp/temp_test/duplicate-detector$
+```
 
