@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+dupFinder
+dupFinderTests
+dupFinder

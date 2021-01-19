@@ -1,0 +1,91 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Open TDD book-does not work",
+			"command": "/usr/bin/okular '/home/amezents/Documents/cpp/tdd/Modern C++ Programming with Test-Driven Development.pdf' &"
+		},
+		{
+			"type": "process",
+			"label": "build dupes",
+			"command": "/usr/bin/g++-9",
+			"args": [
+				"-std=c++17",
+				"-I.",
+				"-isystem /usr/include/gtest/",
+				"-pthread",
+				"/usr/local/lib/libgtest_main.a",
+				"/usr/local/lib/libgtest.a",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: /usr/bin/g++-9"
+		},
+		{
+			"type": "process",
+			"label": "build gmock for dupes",
+			"command": "/usr/bin/g++-9",
+			"args": [
+				"-std=c++17",
+				"-I.",
+				"-isystem /usr/include/gtest/",
+				"-isystem /usr/include/gmock/",
+				"-pthread",
+				"/usr/local/lib/libgmock_main.a",
+				"/usr/local/lib/libgmock.a",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}/${fileBasenameNoExtension}",
+				"-lcrypto"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"detail": "compiler: /usr/bin/g++-9"
+		},
+		{
+			"type": "process",
+			"label": "Run gMock",
+			"command": "${fileDirname}/${fileBasenameNoExtension}",
+			"group": "test",
+			"detail": "Google mock",
+			"dependsOn": ["build gmock for dupes","build example"]		
+		},
+		{
+			"type": "shell",
+			"label": "build example",
+			"command": "cd ./example && make run && cd ../",
+			"group": "test",
+			"detail": "build programm used by Google mock"
+		},
+		{
+			"type": "process",
+			"label": "Run gTests",
+			"command": "${fileDirname}/${fileBasenameNoExtension}",
+			"group": "test",
+			"detail": "Google tests",
+			"dependsOn": ["build dupes"]		
+		}
+	]
+}
