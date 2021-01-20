@@ -5,10 +5,14 @@ get two folders to find out files\` duplicates and output list of detected dups.
  - dir_1 and dir_2 - folders to process
  - 20000 - files with size greter than this value will not be processed (e.g. analise of huge file consumes much time)
 
+To build dupFinder only execute in shell the command "make" in example folder of repository
+
+`host:duplicate-detector$cd example && make`
 
 To build and run tests for dupFinder execute in shell the command "make" in root folder of repository
 
 `host:duplicate-detector$make`
+Note: tests use gtest libs which nesessary to build see below
  - output should be something like this:
 ```
 builds target programm
@@ -64,4 +68,23 @@ Running main() from gmock_main.cc
 [  PASSED  ] 10 tests.
 host:duplicate-detector$
 ```
+to build gtest libs from sources do the following
+```
+cd libs
+cmake /usr/src/gtest
+make
+```
+this places libgtets.a and libgtest_main.a in libs dir
+Note: /usr/src/gtest - folder with src of gtest
 
+to get src of gtest
+```
+>dpkg -l *gtest*
+the ouput will be if gtest is installed
+"ii  libgtest-dev:amd6 1.8.0-6       amd64         Google's framework for writing C++ tests"
+>dpkg -L libgtest-dev
+shows the installation folders
+
+if package is not installed do the following:
+sudo apt-get install libgtest-dev
+```
