@@ -8,8 +8,8 @@ get two folders to find out files\` duplicates and output list of detected dups.
 
 To build and run tests for dupFinder execute in shell the command "make" in root folder of repository
 
-host:duplicate-detector$make
-output should be something like this:
+`host:duplicate-detector$make`
+ - output should be something like this:
 ```
 builds target programm
 cd example; \
