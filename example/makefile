@@ -1,4 +1,4 @@
 run: 
-	g++-9 -I. \
+	g++ -I. \
 	-std=c++17 \
 	dupFinder.cpp -o dupFinder -lcrypto

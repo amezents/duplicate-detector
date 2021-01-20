@@ -4,7 +4,7 @@ runTests: dupFinder dupFinderTests
 
 dupFinderTests:
 	@echo "builds tests"
-	g++-9 -I. \
+	g++ -I. \
 	-std=c++17 \
 	-isystem /usr/include/gtest/ \
 	-pthread \
