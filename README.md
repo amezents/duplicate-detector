@@ -12,7 +12,7 @@ To build dupFinder only execute in shell the command "make" in example folder of
 To build and run tests for dupFinder execute in shell the command "make" in root folder of repository
 
 `host:duplicate-detector$make`
-Note: tests use gtest libs which nesessary to build see below
+ - Note: tests use gtest libs which nesessary to build see below
  - output should be something like this:
 ```
 builds target programm
@@ -75,7 +75,7 @@ cmake /usr/src/gtest
 make
 ```
 this places libgtets.a and libgtest_main.a in libs dir
-Note: /usr/src/gtest - folder with src of gtest
+ - Note: /usr/src/gtest - folder with src of gtest
 
 to get src of gtest
 ```
