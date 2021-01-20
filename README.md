@@ -1,18 +1,24 @@
 # duplicate-detector
-get list of folders to find duplicates and outputs list of detected
+get two folders to find out files\` duplicates and output list of detected dups.
 
-Execute in shell command "make" - this produces tests and target programm executables and runs the tests.
->make
+>./example/dupFinder dir_1 dir_2 20000
+dir_1 and dir_2 - folders to process
+20000 - files with size greter than this value will not be processed (e.g. analise of huge file consumes much time)
+
+
+To build and run tests for dupFinder execute in shell the command "make" in root folder of repository
+
+host:duplicate-detector$make
 output should be something like this:
 ```
 builds target programm
 cd example; \
 make run
-make[1]: Entering directory '/home/amezents/study/kata/cpp/temp_test/duplicate-detector/example'
+make[1]: Entering directory 'duplicate-detector/example'
 g++-9 -I. \
 -std=c++17 \
 dupFinder.cpp -o dupFinder -lcrypto
-make[1]: Leaving directory '/home/amezents/study/kata/cpp/temp_test/duplicate-detector/example'
+make[1]: Leaving directory 'duplicate-detector/example'
 runs the tests
 ./dupFinderTests
 Running main() from gmock_main.cc
@@ -56,6 +62,6 @@ Running main() from gmock_main.cc
 [----------] Global test environment tear-down
 [==========] 10 tests from 5 test cases ran. (149 ms total)
 [  PASSED  ] 10 tests.
-amezents@amezents-host:~/study/kata/cpp/temp_test/duplicate-detector$
+host:duplicate-detector$
 ```
 
