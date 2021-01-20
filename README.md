@@ -1,9 +1,9 @@
 # duplicate-detector
 get two folders to find out files\` duplicates and output list of detected dups.
 
->./example/dupFinder dir_1 dir_2 20000
-dir_1 and dir_2 - folders to process
-20000 - files with size greter than this value will not be processed (e.g. analise of huge file consumes much time)
+`host:duplicate-detector$./example/dupFinder dir_1 dir_2 20000`
+ - dir_1 and dir_2 - folders to process
+ - 20000 - files with size greter than this value will not be processed (e.g. analise of huge file consumes much time)
 
 
 To build and run tests for dupFinder execute in shell the command "make" in root folder of repository
